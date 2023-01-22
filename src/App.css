@@ -117,15 +117,15 @@ body {
 }
 
 form {
-  width: 100%;
-  max-width: 1280px;
+  width: 95%;
   margin: 0 auto;
   padding: 10px;
   background: #40414F;
-
+  left:2.5%;
   display: flex;
   flex-direction: row;
   gap: 10px;
+  border-radius: 10px;
 }
 
 textarea {
@@ -151,4 +151,41 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+.chats{
+  background-color: #40414fd4;
+  padding:2%;
+  font-size: 25px;
+  color:#fff;
+  width:95%;
+  position: absolute;
+  left: 2.5%;
+  height: 91%;
+  border-radius: 10px;
+  overflow-y:scroll;
+}
+.chats .UC{
+  background-color: darkslategray;
+  padding: 1.5%;
+  border-radius: 10px;
+  height: fit-content;
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.chats .BC img{
+  margin-right: 2%;
+}
+.chats .UC img{
+  margin-right: 2%;
+}
+.chats .BC {
+  background-color:lightslategray;
+  padding: 1.5%;
+  border-radius: 10px;
+  height: fit-content;
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
 }
