@@ -8,36 +8,29 @@ import userimg from './assets/user.svg'
 function App() {
   const [Prompt,setPrompt] = useState("") 
   const [response,setRes] = useState("")
-  const [userChat,setUc] = useState([])
-  const [botChat,setBc] = useState([])
+  const [chat,setChat] = useState([])
   const onSubmit = async (e) =>{
     e.preventDefault()
-    const temp = userChat.concat({chat:Prompt})
-    setUc(temp)
     await axios.post('http://localhost:3001/',{
       prompt:Prompt
     })
       .then(function(response){
         console.log(response)
         setRes(response)
-        const temp1 = botChat.concat({chat:response.data.bot})
-        setUc(temp1)
+        const temp1 = chat.concat({userChat:Prompt,botChat:response.data.bot})
+        setChat(temp1)
+        localStorage.setItem('Chat',JSON.stringify(chat))
       })
   }
   useEffect(()=>{
-    const u = JSON.parse(localStorage.getItem('userchat'))
+    const u = JSON.parse(localStorage.getItem('Chat'))
     if(u){
-      setUc(u)
-    }
-    const b = JSON.parse(localStorage.getItem('botchat'))
-    if(b){
-      setBc(b)
+      setChat(u)
     }
   },[])
-  useEffect(()=>{
-    localStorage.setItem('userchat',JSON.stringify(userChat))
-    localStorage.setItem('botchat',JSON.stringify(botChat))
-  },[userChat])
+  // useEffect(()=>{
+  //   localStorage.setItem('Chat',JSON.stringify(chat))
+  // },[chat])
   const Handlekeypress = (e) =>{
     if(e.keyCode===13){
       onSubmit(e)
@@ -47,20 +40,19 @@ function App() {
     <div id="App">
       <div id="chat_container">
         <div className='chats'>
-          <div className='UC'>
-            <img src={userimg}/>
-            <p>Hey whats your name?</p>
-          </div>
-          <div className='BC'>
-            <img src={botimg}/>
-            <p>Hey whats your name?</p>
-          </div>
           {
-            userChat.map((Chat)=>(
-              <div className='UC'>
-                <img src={userimg}/>
-                <p>{Chat.chat}</p>
-              </div>
+            chat.map((Chat)=>(
+                  <div>
+                    <div className='UC'>
+                      <img src={userimg}/>
+                      <p>{Chat.userChat}</p>
+                    </div>
+                    
+                    <div className='BC'>
+                      <img src={botimg}/>
+                      <p>{Chat.botChat}</p>
+                    </div>
+                  </div>
             ))
           }
         </div>
@@ -74,3 +66,7 @@ function App() {
 }
 
 export default App;
+{/* <div className='UC'>
+                <img src={userimg}/>
+                <p>{Chat.userChat}</p>
+              </div> */}

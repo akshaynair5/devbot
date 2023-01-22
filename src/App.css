@@ -165,7 +165,7 @@ form img {
   border-radius: 10px;
   overflow-y:scroll;
 }
-.chats .UC{
+.UC{
   background-color: darkslategray;
   padding: 1.5%;
   border-radius: 10px;
@@ -174,13 +174,13 @@ form img {
   display: flex;
   flex-wrap: wrap;
 }
-.chats .BC img{
+.BC img{
   margin-right: 2%;
 }
-.chats .UC img{
+.UC img{
   margin-right: 2%;
 }
-.chats .BC {
+.BC {
   background-color:lightslategray;
   padding: 1.5%;
   border-radius: 10px;
