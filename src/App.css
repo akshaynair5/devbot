@@ -189,3 +189,11 @@ form img {
   display: flex;
   flex-wrap: wrap;
 }
+.btn{
+  padding: 0.2%;
+  font-size: 25px;
+  border-radius: 15px;
+  background-color:#343541;
+  color: #dcdcdc;
+  cursor: pointer;
+}

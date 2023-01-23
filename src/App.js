@@ -33,8 +33,12 @@ function App() {
   // },[chat])
   const Handlekeypress = (e) =>{
     if(e.keyCode===13){
+      e.preventDefault()
       onSubmit(e)
     }
+  }
+  const Clear = () =>{
+    localStorage.clear()
   }
   return (
     <div id="App">
@@ -57,8 +61,9 @@ function App() {
           }
         </div>
         <form>
-          <textarea name="prompt" rows="1" cols="1" onChange={(e)=>setPrompt(e.target.value)} onKeyUp={(e)=>Handlekeypress(e)}></textarea>
+          <textarea name="prompt" rows="1" cols="1" onChange={(e)=>setPrompt(e.target.value)} onKeyUp={(e)=>Handlekeypress(e)} placeholder="Ask DevBot anything.. "></textarea>
           <button type="submit" onClick={(e)=>onSubmit(e)}><img src={sendimg} ></img></button>
+          <input type="button" className='btn' value="clear chat" onClick={()=>Clear()}></input>
         </form>
       </div>
     </div>
