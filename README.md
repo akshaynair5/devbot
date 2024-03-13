@@ -1,5 +1,7 @@
-DevBot is a Chat-Bot made using react.js,express and openapi. It has a simple UI through which users can ask questions regarding programing and recieve accurate answers in the text from the API.
+DevBot is a Chat-Bot made using react.js,express and openapi. It has a simple UI through which users can ask questions regarding programing and recieve accurate answers in text form from the API.
 sample UI
+
+
 <img width="942" alt="image" src="https://user-images.githubusercontent.com/108605741/214058360-34991a73-714c-4845-a6ab-e977c72f98ec.png">
 
 Personal chat with the bot is stored for you to access it again for future references.
