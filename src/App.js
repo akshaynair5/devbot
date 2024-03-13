@@ -70,5 +70,4 @@ function App() {
 export default App;
 {/* <div className='UC'>
                 <img src={userimg}/>
-                <p>{Chat.userChat}</p>
               </div> */}
