@@ -68,5 +68,3 @@ function App() {
 }
 
 export default App;
-{/* <div className='UC'>
-              </div> */}
