@@ -15,7 +15,7 @@ function App() {
       prompt:Prompt
     })
       .then(function(response){
-        // console.log(response)
+        console.log(response)
         setRes(response)
         const temp1 = chat.concat({userChat:Prompt,botChat:response.data.bot})
         setChat(temp1)
